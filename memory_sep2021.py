@@ -21,7 +21,6 @@ state = {'mark': None}
 hide = [True] * 64
 taps = 0
 
-
 def square(x, y):
     "Draw white square with black outline at (x, y)."
     up()
@@ -61,6 +60,11 @@ def tap(x, y):
         hide[mark] = False
         state['mark'] = None
         
+
+    # Detectar cuando todos los cuadros se han destapado
+    if(hide == [False]*64):
+      print("Game Over")
+      return
 
 
 def draw():
